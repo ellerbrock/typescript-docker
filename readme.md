@@ -1,5 +1,7 @@
 # TypeScript with Node.js LTS (6.9.1) Alpine Linux
 
+[![Docker Automated Build](https://img.shields.io/docker/automated/frapsoft/typescript.svg)](https://hub.docker.com/r/frapsoft/typescript/) [![Docker Pulls](https://img.shields.io/docker/pulls/frapsoft/typescript.svg)](https://hub.docker.com/r/frapsoft/typescript/) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg)](https://github.com/ellerbrock/open-source-badges/) [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)
+
 - Docker Hub: [frapsoft/typescript](https://hub.docker.com/r/frapsoft/typescript/)
 - Repository: <https://github.com/ellerbrock/typescript-docker>
 - Dockerfile: <https://github.com/ellerbrock/typescript-docker/blob/master/Dockerfile>

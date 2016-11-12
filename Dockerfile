@@ -4,7 +4,7 @@ FROM alpine
 MAINTAINER Maik Ellerbrock (github.com/ellerbrock)
 
 ENV CONTAINER_VERSION 0.0.1
-ENV CONTAINER_NAME frapsoft/typescript:light
+ENV CONTAINER_NAME frapsoft/typescript:nodemon
 ENV CONTAINER_REPO https://github.com/ellerbrock/typescript-docker/tree/light
 
 RUN mkdir /app && \
@@ -12,13 +12,12 @@ RUN mkdir /app && \
   apk update && \
   apk add --no-cache nodejs && \
   npm update && \
-  npm i -g typescript && \
-  npm uninstall -g npm && \
+  npm i -g typescript nodemon ts-node && \
+  npm cache clean && \
   chown -R app:app /app
 
 USER app
 ENV HOME=/app
 WORKDIR $HOME
 
-ENTRYPOINT ["tsc"]
-CMD ["--version"]
+ENTRYPOINT ["nodemon --exec ts-node"]
