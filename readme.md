@@ -5,6 +5,12 @@
 - Dockerfile: <https://github.com/ellerbrock/typescript-docker/blob/master/Dockerfile>
 - Base Image: [alpine](https://hub.docker.com/_/alpine/)
 
+## Versions
+
+- `frapsoft/typescript` - Node.js [(latest)](https://github.com/ellerbrock/typescript-docker/) LTS (6.9.1) with npm
+- `frapsoft/typescript:light` - Node.js [(light)](https://github.com/ellerbrock/typescript-docker/tree/light) LTS (6.9.1) without npm
+- `frapsoft/typescript:yarn` - Node.js [(yarn)](https://github.com/ellerbrock/typescript-docker/tree/yarn) LTS (6.9.1) with yarn instead of npm
+
 ## Installation
 
 `docker pull frapsoft/typescript`
