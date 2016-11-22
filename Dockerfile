@@ -1,23 +1,24 @@
-
 FROM alpine
 
-MAINTAINER Maik Ellerbrock (github.com/ellerbrock)
-
-ENV CONTAINER_VERSION 0.0.1
-ENV CONTAINER_NAME frapsoft/typescript:nodemon
-ENV CONTAINER_REPO https://github.com/ellerbrock/typescript-docker/tree/light
+MAINTAINER Maik Ellerbrock (https://github.com/ellerbrock)
 
 RUN mkdir /app && \
   adduser -h /app -s /bin/false -D app && \
   apk update && \
   apk add --no-cache nodejs && \
+  rm -f /tmp/* /etc/apk/cache/* && \
   npm update && \
-  npm i -g typescript nodemon ts-node && \
-  npm cache clean && \
+  npm i -g typescript && \
+  npm uninstall -g npm && \
   chown -R app:app /app
 
 USER app
+
 ENV HOME=/app
+
 WORKDIR $HOME
 
-ENTRYPOINT ["nodemon --exec ts-node"]
+
+ENTRYPOINT ["tsc"]
+
+CMD ["--version"]
